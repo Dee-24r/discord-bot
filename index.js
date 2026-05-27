@@ -14,10 +14,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
   try {
-    await interaction.reply("I do not know this command yet.");
-  } catch (error) {
-    console.error(error);
-
     if (interaction.commandName === "ping") {
         const start = Date.now();
         await interaction.deferReply();
@@ -129,6 +125,11 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
         return;
     }
+
+        await interaction.reply("I do not know this command yet.");
+
+    } catch (error) {
+        console.error(error);
 
 }
 });
